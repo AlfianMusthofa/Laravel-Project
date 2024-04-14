@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+   font-family: 'Poppins', sans-serif;
+}
+
+form input {
+   border: 1px solid grey;
+   border-radius: 3px;
+}
+
+.mySlides {
+   display: none;
+}
+
+.prev,
+.next {
+   cursor: pointer;
+   position: absolute;
+   top: 50%;
+   width: auto;
+   margin-top: -22px;
+   padding: 16px;
+   color: black;
+   font-weight: bold;
+   font-size: 18px;
+   transition: 0.6s ease;
+   border-radius: 0 3px 3px 0;
+   user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+   right: 0;
+   border-radius: 3px 0 0 3px;
+}
+
+/* Fading animation */
+.fade {
+   animation-name: sliding-vertically;
+   animation-duration: 1.5s;
+}
+
+@keyframes fade {
+   from {
+      opacity: .4
+   }
+
+   to {
+      opacity: 1
+   }
+}
+
+.mySlides>img {
+   border-radius: 5px;
+}
+
+.catRow {
+   border: 1px solid #d6d6d6;
+   padding: 10px;
+   margin-bottom: 3px;
+}
+
+.catBox {
+   border: 1px solid #d9d9d9;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 5px;
+   padding: 8px;
+   justify-content: center;
+   text-align: center;
+   background-color: white;
+}
+
+.catImage {
+   width: 80px;
+}
+
+.catLable {
+   font-size: 11px;
+}
+
+.cart {
+   border: 1px solid #d6d6d6;
+}
+
+.cart:hover {
+   border: 1px solid #8c8c8c;
+}
+
+.divrec {
+   border: 1px solid #d6d6d6;
+}
+
+.cp {
+   border-top: 1px solid #d6d6d6;
+}
+
+.ctaProduct>button {
+   padding: 9px 26px;
+   border: 1px solid black;
+   border-radius: 2px;
+   background-color: #10172e;
+   color: white;
+}
+
+.boxReviews {
+   border: 1px solid #d6d6d6;
+   padding: 5px;
+   border-radius: 3px;
+}
+
+.devider {
+   border: 1px solid #d6d6d6;
+}
