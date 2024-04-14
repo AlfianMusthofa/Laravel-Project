@@ -34,7 +34,7 @@
     {{-- Rekomendasi --}}
     <div class="container mx-auto my-5">
         <div class="divrec bg-white p-[10px] text-center mb-[5px]">
-            <p>REKOMENDASI</p>
+            <p>RECOMMENDATION</p>
         </div>
         <div class="grid grid-cols-5 gap-1" id="rekomendasi">
             @foreach ($datas as $data)
