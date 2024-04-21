@@ -3,18 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Http\Requests\StoreProductRequest;
-use App\Http\Requests\UpdateProductRequest;
-use App\Models\Cart;
+use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class DashboardPostController extends Controller
 {
    /**
     * Display a listing of the resource.
     */
    public function index()
    {
-      //
+      return view('dashboard.upload');
    }
 
    /**
@@ -22,15 +20,28 @@ class ProductController extends Controller
     */
    public function create()
    {
-      //
+      // 
    }
 
    /**
     * Store a newly created resource in storage.
     */
-   public function store(StoreProductRequest $id)
+   public function store(Request $request)
    {
-      // 
+      $validatedData = $request->validate([
+         "name" => 'required',
+         "price" => 'required',
+         "category_id" => 'required',
+         "image" => 'required|image'
+      ]);
+
+      if ($request->file('image')) {
+         $validatedData['image'] = $request->file('image')->store('post-images');
+      }
+
+      Product::create($validatedData);
+
+      return redirect('/dashboard');
    }
 
    /**
@@ -38,7 +49,7 @@ class ProductController extends Controller
     */
    public function show(Product $product)
    {
-      //
+      // 
    }
 
    /**
@@ -52,7 +63,7 @@ class ProductController extends Controller
    /**
     * Update the specified resource in storage.
     */
-   public function update(UpdateProductRequest $request, Product $product)
+   public function update(Request $request, Product $product)
    {
       //
    }
@@ -62,6 +73,8 @@ class ProductController extends Controller
     */
    public function destroy(Product $product)
    {
-      //
+      // Product::destroy($product->id);
+
+      // return redirect('/dashboard');
    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -15,9 +16,6 @@ class MainController extends Controller
       $data = json_decode($jsonContents, true);
 
       $datas = Product::all();
-
-      $response = Http::get('https://api.escuelajs.co/api/v1/products');
-      $products = $response->json();
 
       return view('landing', [
          "title" => "ShopCart | 50% Off",

@@ -2,19 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
-use App\Http\Requests\StoreProductRequest;
-use App\Http\Requests\UpdateProductRequest;
 use App\Models\Cart;
+use App\Http\Requests\StoreCartRequest;
+use App\Http\Requests\UpdateCartRequest;
+use GuzzleHttp\Psr7\Request;
 
-class ProductController extends Controller
+class CartController extends Controller
 {
    /**
     * Display a listing of the resource.
     */
    public function index()
    {
-      //
+      // Cart::all();
+
+      // return view('cart', [
+      //    "title" => 'My Cart'
+      // ]);
    }
 
    /**
@@ -28,7 +32,7 @@ class ProductController extends Controller
    /**
     * Store a newly created resource in storage.
     */
-   public function store(StoreProductRequest $id)
+   public function store()
    {
       // 
    }
@@ -36,15 +40,15 @@ class ProductController extends Controller
    /**
     * Display the specified resource.
     */
-   public function show(Product $product)
+   public function show(Cart $cart)
    {
-      //
+      // 
    }
 
    /**
     * Show the form for editing the specified resource.
     */
-   public function edit(Product $product)
+   public function edit(Cart $cart)
    {
       //
    }
@@ -52,7 +56,7 @@ class ProductController extends Controller
    /**
     * Update the specified resource in storage.
     */
-   public function update(UpdateProductRequest $request, Product $product)
+   public function update(UpdateCartRequest $request, Cart $cart)
    {
       //
    }
@@ -60,7 +64,7 @@ class ProductController extends Controller
    /**
     * Remove the specified resource from storage.
     */
-   public function destroy(Product $product)
+   public function destroy(Cart $cart)
    {
       //
    }

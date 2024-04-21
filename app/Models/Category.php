@@ -2,16 +2,18 @@
 
 namespace App\Models;
 
-use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Product extends Model
+class Category extends Model
 {
+   use HasFactory;
+
    protected $guarded = ['id'];
 
-   function category()
+   function products()
    {
-      return $this->belongsTo(Category::class);
+      return $this->hasMany(Product::class);
    }
 }

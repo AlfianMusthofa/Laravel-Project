@@ -13,7 +13,8 @@
    },
    {
       "image": "cat (4).png",
-      "label": "Pakaian"
+      "label": "Pakaian Pria",
+      "link": "categories/2"
    },
    {
       "image": "cat (5).png",
@@ -21,7 +22,7 @@
    },
    {
       "image": "cat (6).png",
-      "label": "Pakaian"
+      "label": "Pakaian Wanita"
    },
    {
       "image": "cat (7).png",

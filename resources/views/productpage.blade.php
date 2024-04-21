@@ -5,10 +5,12 @@
 <div class="container mx-auto my-4">
     <div class="grid grid-cols-2">
         {{-- Gambar Product --}}
-        <img src="{{ asset('assets/products/' . $data['image']) }}" alt="" class="w-[490px]">
+        <img src="{{ asset('storage/' . $data['image']) }}" alt="" class="w-[490px]">
         <div>
             <div class="flex flex-col gap-2">
-                <h2 class="text-[17px] font-semibold">{{ $data['name'] }}</h2>
+                <h2 class="text-[15px] font-semibold line-clamp-2">{{ $data['name'] }}</h2>
+                <p class="text-[11px]">Category <a href="/categories/{{ $data->category->id }}"
+                        class="underline">{{ $data->category->name }}</a></p>
                 <div class="rate flex gap-3 items-center">
                     <div class="star">
                         <i class="fa-regular fa-star text-[13px]" style="color: #FFD43B;"></i>
@@ -20,7 +22,7 @@
                 </div>
                 <p class="text-[15px] font-medium text-red-500">Rp{{ $data['price'] }}</p>
             </div>
-            <p class="text-[13px] mt-[30px] text-justify leading-5">Lorem ipsum dolor sit amet consectetur
+            <p class="text-[13px] mt-[20px] text-justify leading-5">Lorem ipsum dolor sit amet consectetur
                 adipisicing elit. Hic
                 quis expedita
                 quas
@@ -29,10 +31,21 @@
                 totam et sed, nesciunt suscipit quas?</p>
 
             {{-- CTA --}}
-            <div class="ctaProduct text-[11px] my-[30px] flex gap-2 font-medium">
-                <button>BUY NOW</button>
-                <button>ADD TO CART</button>
-            </div>
+            @auth
+                <form action="" method="">
+                    @csrf
+                    <div class="ctaProduct text-[11px] my-[30px] flex gap-2 font-medium items-center">
+                        <button>BUY NOW</button>
+                        <button type="submit">ADD TO CART</button>
+                    </div>
+                </form>
+            @else
+                <div class="ctaProduct text-[11px] my-[30px] flex gap-2 font-medium items-center">
+                    <button>BUY NOW</button>
+                    <a href="/login" class="border py-[9px] px-[20px] border-[#10172e]">ADD TO
+                        CART</a>
+                </div>
+            @endauth
 
             {{-- CTA Favourite --}}
             <div>
@@ -60,7 +73,7 @@
             </div>
 
             {{-- Delivery --}}
-            <div class="mt-5 flex flex-col gap-5">
+            <div class="mt-5 flex flex-col gap-3">
                 <div class="text-[12px] flex items-center gap-3">
                     <i class="fa-solid fa-truck-fast" style="color: #FFD43B;"></i>
                     <div>

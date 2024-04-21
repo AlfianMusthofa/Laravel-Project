@@ -24,11 +24,12 @@
         <a href="#">Deliveries</a>
     </div>
     <div class="right flex gap-4 text-[13px]">
-        <a href="#">Cart</a>
         @auth
+            <a href="/cart">Cart</a>
             <a href="#">{{ auth()->user()->name }}</a>
         @else
-            <a href="/login">Login</a>
+            <a href="/signup">SigIn</a>
+            <a href="/login">LogIn</a>
         @endauth
     </div>
 </div>

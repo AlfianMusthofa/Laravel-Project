@@ -21,10 +21,10 @@
         </div>
         <div class="grid grid-cols-10 gap-1">
             @foreach ($categories as $data)
-                <a href="#" class="hover:shadow-md">
+                <a href="/categories/2" class="hover:shadow-md">
                     <div class="catBox">
                         <img src="{{ asset('assets/cat/' . $data['image']) }}" alt="" class="catImage">
-                        <p class="catLable">{{ $data['label'] }}</p>
+                        <p class="catLable line-clamp-1">{{ $data['label'] }}</p>
                     </div>
                 </a>
             @endforeach
@@ -39,7 +39,7 @@
         <div class="grid grid-cols-5 gap-1" id="rekomendasi">
             @foreach ($datas as $data)
                 <a href="/productpage/{{ $data['id'] }}" class="cart bg-white hover:shadow-md">
-                    <img src="{{ asset('assets/products/' . $data['image']) }}" alt="">
+                    <img src="{{ asset('storage/' . $data['image']) }}" alt="">
                     <div class="caption p-[8px]">
                         <p class="text-[12px] line-clamp-2">{{ $data['name'] }}</p>
                         <div class="div flex justify-between items-center mt-2">
