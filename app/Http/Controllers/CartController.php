@@ -19,6 +19,8 @@ class CartController extends Controller
       // return view('cart', [
       //    "title" => 'My Cart'
       // ]);
+
+      // dd($request);
    }
 
    /**

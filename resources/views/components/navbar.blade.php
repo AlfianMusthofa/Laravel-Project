@@ -15,7 +15,9 @@
 
 <div class="container mx-auto flex justify-between items-center py-3">
     <div class="logo">
-        <a href="/" class="text-[17px]">NamaToko</a>
+        <a href="/" class="text-[17px]">
+            <img src="assets/logo.png" alt="" class="w-[120px]">
+        </a>
     </div>
     <div class="center flex gap-7 text-[13px]">
         <button>Category <i class="fa fa-caret-down"></i></button>

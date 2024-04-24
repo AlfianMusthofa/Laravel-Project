@@ -38,9 +38,14 @@
                                             <td class="whitespace-nowrap px-6 py-2">{{ $item['price'] }}</td>
                                             <td class="whitespace-nowrap px-6 py-2">{{ $item['category_id'] }}</td>
                                             <td class="whitespace-nowrap px-6 py-2 flex gap-[5px]">
-                                                <a href="#"
-                                                    class="size-[30px] flex items-center justify-center bg-[#4d88ff]"><i
-                                                        class="fa-solid fa-eye" style="color: white"></i></a>
+                                                <form action="/dashboard/upload/{{ $item->id }}" method="post">
+                                                    @csrf
+                                                    @method('get')
+                                                    <button type="submit"
+                                                        class="size-[30px] flex items-center justify-center bg-[#4d88ff]">
+                                                        <i class="fa-solid fa-eye" style="color: white"></i>
+                                                    </button>
+                                                </form>
                                                 <a href="#"
                                                     class="size-[30px] flex items-center justify-center bg-yellow-300"><i
                                                         class="fa-solid fa-pencil" style="color: white"></i></a>
@@ -61,6 +66,7 @@
                     </div>
                 </div>
             </div>
+            {{ $products->links() }}
         </div>
     </div>
 @endsection

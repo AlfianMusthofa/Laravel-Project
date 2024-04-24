@@ -14,11 +14,12 @@
    {
       "image": "cat (4).png",
       "label": "Pakaian Pria",
-      "link": "categories/2"
+      "route": "categories/2"
    },
    {
       "image": "cat (5).png",
-      "label": "Ibu & Bayi"
+      "label": "Ibu & Bayi",
+      "route": "categories/3"
    },
    {
       "image": "cat (6).png",

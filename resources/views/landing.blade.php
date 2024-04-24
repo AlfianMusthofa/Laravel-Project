@@ -53,7 +53,11 @@
                 </a>
             @endforeach
         </div>
+        <div class="mt-[10px]">
+            {{ $datas->links() }}
+        </div>
     </div>
+
 
     @include('components.footer')
 @endsection

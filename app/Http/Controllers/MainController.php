@@ -15,7 +15,7 @@ class MainController extends Controller
       $jsonContents = file_get_contents($url);
       $data = json_decode($jsonContents, true);
 
-      $datas = Product::all();
+      $datas = Product::paginate(20);
 
       return view('landing', [
          "title" => "ShopCart | 50% Off",

@@ -6,9 +6,9 @@ use App\Http\Controllers\DashboardPostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductPageController;
 use App\Http\Controllers\SignUpController;
+use App\Models\Category;
 use App\Models\Product;
 
 /*
@@ -33,7 +33,7 @@ Route::get('/categories/{id}', [CategoryController::class, 'index']);
 // Dashboard Routes
 Route::get('/dashboard', function () {
    return view('dashboard.index', [
-      "products" => Product::all()
+      "products" => Product::paginate(10)
    ]);
 });
 

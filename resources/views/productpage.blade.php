@@ -1,7 +1,6 @@
 @extends('layouts.main')
 
 @include('components.navbar')
-
 <div class="container mx-auto my-4">
     <div class="grid grid-cols-2">
         {{-- Gambar Product --}}
@@ -32,7 +31,7 @@
 
             {{-- CTA --}}
             @auth
-                <form action="" method="">
+                <form action="/addcart/{{ $data['id'] }}" method="post">
                     @csrf
                     <div class="ctaProduct text-[11px] my-[30px] flex gap-2 font-medium items-center">
                         <button>BUY NOW</button>

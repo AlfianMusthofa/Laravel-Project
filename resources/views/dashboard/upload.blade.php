@@ -17,7 +17,11 @@
                 </div>
                 <div class="flex flex-col gap-[3px]">
                     <label for="category_id" class="text-[13px]">Category_id</label>
-                    <input type="text" name="category_id" id="category_id" class="text-[15px] p-[5px]">
+                    <select name="category_id" id="" class="border border-gray-400 text-[15px] p-[5px] rounded-sm">
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="flex flex-col gap-[3px]">
                     <label for="image" class="text-[13px]">Image</label>

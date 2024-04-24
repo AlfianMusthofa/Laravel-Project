@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,9 @@ class DashboardPostController extends Controller
     */
    public function index()
    {
-      return view('dashboard.upload');
+      return view('dashboard.upload', [
+         'categories' => Category::all()
+      ]);
    }
 
    /**
@@ -49,7 +52,7 @@ class DashboardPostController extends Controller
     */
    public function show(Product $product)
    {
-      // 
+      dd($product);
    }
 
    /**
